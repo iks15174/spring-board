@@ -2,6 +2,7 @@ package com.example.board.service;
 
 import java.util.List;
 import com.example.board.domain.BoardDTO;
+import com.example.board.paging.Criteria;
 
 public interface BoardService{
 
@@ -11,5 +12,5 @@ public interface BoardService{
 
     public boolean deleteBoard(Long idx);
 
-    public List<BoardDTO> getBoardList();
+    public List<BoardDTO> getBoardList(BoardDTO params);
 }

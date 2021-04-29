@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BoardDTO {
+public class BoardDTO extends commonDTO{
 
     /** 번호 (PK) */
 	private @Setter @Getter Long idx;
@@ -29,18 +29,5 @@ public class BoardDTO {
 
 	/** 비밀 여부 */
 	private @Setter @Getter String secretYn;
-
-	/** 삭제 여부 */
-	private @Setter @Getter String deleteYn;
-
-	/** 등록일 */
-	private @Setter @Getter LocalDateTime insertTime;
-
-	/** 수정일 */
-	private @Setter @Getter LocalDateTime updateTime;
-
-	/** 삭제일 */
-	private @Setter @Getter LocalDateTime deleteTime;
-
     
 }

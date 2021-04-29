@@ -42,7 +42,7 @@ public class DBConfiguration {
 		SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
 		factoryBean.setDataSource(dataSource());
 		factoryBean.setMapperLocations(applicationContext.getResources("classpath:/mappers/**/*Mapper.xml"));
-		factoryBean.setTypeAliasesPackage("com.example.board.domain");
+		factoryBean.setTypeAliasesPackage("com.example.board.*");
 		factoryBean.setConfiguration(mybatisConfig());
 		return factoryBean.getObject();
 	}

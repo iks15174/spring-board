@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.example.board.constant.Method;
 import com.example.board.domain.BoardDTO;
+import com.example.board.paging.Criteria;
 import com.example.board.service.BoardService;
 import com.example.board.util.UiUtils;
 
@@ -13,6 +14,7 @@ import org.springframework.data.annotation.ReadOnlyProperty;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -54,8 +56,8 @@ public class BoardController extends UiUtils{
     }
 
     @GetMapping(value = "/board/list.do")
-    public String openBoardList(Model model){
-        List<BoardDTO> boardList = boardService.getBoardList();
+    public String openBoardList(@ModelAttribute("params") BoardDTO params, Model model){
+        List<BoardDTO> boardList = boardService.getBoardList(params);
         model.addAttribute("boardList", boardList);
 
         return "board/list";
